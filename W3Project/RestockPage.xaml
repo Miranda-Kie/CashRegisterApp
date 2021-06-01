@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="W3Project.RestockPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <RelativeLayout>
+                <Label Text="Restock" 
+                       x:Name="RestockTitle"
+                       HorizontalOptions="Center" 
+                       FontAttributes="Bold"
+                       BackgroundColor="Aqua"
+                       RelativeLayout.HeightConstraint="{ConstraintExpression
+                                                    Type=RelativeToParent,
+                                                    Property=Height,
+                                                    Factor=0}"/>
+           
+                <StackLayout HorizontalOptions="Fill"
+                             VerticalOptions="Center"
+                             x:Name="Entry"
+                             RelativeLayout.YConstraint="{ConstraintExpression
+                                                             Type=RelativeToView,
+                                                             ElementName=RestockTitle,
+                                                             Property=Height,
+                                                             Factor=1}"
+                             RelativeLayout.WidthConstraint="{ ConstraintExpression
+                                                             Type=RelativeToParent,
+                                                             Property=Width,
+                                                             Factor=1}">
+                    <Entry x:Name="updatedQuantity"
+                           Placeholder="Enter new quantity" />
+
+                    <Button Text="Restock"
+                            Clicked="Restock_Clicked" />
+
+                    <Button Text="Cancel"
+                            Clicked="Cancel_Clicked" />
+
+                </StackLayout>
+
+                <ListView x:Name="myrestock"
+                          HasUnevenRows="True"
+                          SeparatorColor="Gray"
+                          BackgroundColor="white"
+                          SelectedItem="myrestock_itemselected"
+                          RelativeLayout.YConstraint="{ConstraintExpression
+                                                             Type=RelativeToView,
+                                                             ElementName=Entry,
+                                                             Property=Height,
+                                                             Factor=1}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+
+                                <Label Text="{Binding Name}"
+                                       FontSize="15"
+                                       Padding="8" />
+
+                                <Label Text="{Binding Quantity}"
+                                       HorizontalOptions="EndAndExpand"
+                                       FontSize="15"
+                                       Padding="8" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                </ListView>
+            </RelativeLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>    

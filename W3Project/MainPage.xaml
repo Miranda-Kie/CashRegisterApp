@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="W3Project.MainPage">
+
+    <StackLayout BackgroundColor="LightGray"
+                 Padding="50,10,50,20">
+
+        <Label Text="Case Register App"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="CenterAndExpand"
+               Margin="0, 0, 0, 5" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+
+            <Label x:Name="DisplayType"
+                   Text="Type"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   FontAttributes="Bold"
+                   FontSize="20" />
+
+            <Button Grid.Row="0"
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    Text="Manager"
+                    TextColor="Blue"
+                    CornerRadius="20"
+                    BackgroundColor="Red"
+                    Clicked="Manager_Clicked" />
+
+            <Button Grid.Row="1"
+                    Grid.Column="0"
+                    Text="1"
+                    CornerRadius="20"
+                    BackgroundColor="white"
+                    Clicked="Number_Clicked" />
+            <Button Grid.Row="1"
+                    Grid.Column="1"
+                    Text="2"
+                    CornerRadius="20"
+                    BackgroundColor="white"
+                    Clicked="Number_Clicked" />
+            <Button Grid.Row="1"
+                    Grid.Column="2"
+                    Text="3"
+                    CornerRadius="20"
+                    BackgroundColor="white"
+                    Clicked="Number_Clicked" />
+            <Label x:Name="DisplayTotal"
+                   Grid.Row="1"
+                   Grid.Column="3"
+                   Text="Total"
+                   FontAttributes="Bold"
+                   Padding="5,0,0,10" />
+
+            <Button Grid.Row="2"
+                    Grid.Column="0"
+                    Text="4"
+                    CornerRadius="20"
+                    BackgroundColor="white"
+                    Clicked="Number_Clicked" />
+
+            <Button Grid.Row="2"
+                    Grid.Column="1"
+                    Text="5"
+                    CornerRadius="20"
+                    BackgroundColor="white"
+                    Clicked="Number_Clicked" />
+            <Button Grid.Row="2"
+                    Grid.Column="2"
+                    Text="6"
+                    CornerRadius="20"
+                    BackgroundColor="white"
+                    Clicked="Number_Clicked" />
+            <Button Grid.RowSpan="2"
+                    Grid.Column="3"
+                    Grid.Row="2"
+                    Text="Buy"
+                    FontSize="15"
+                    Margin="0,5,0,5"
+                    FontAttributes="Bold"
+                    CornerRadius="20"
+                    BackgroundColor="Blue"
+                    Clicked="Number_Clicked" />
+
+            <Button Grid.Row="3"
+                    Grid.Column="0"
+                    Text="7"
+                    CornerRadius="20"
+                    BackgroundColor="white"
+                    Clicked="Number_Clicked" />
+            <Button Grid.Row="3"
+                    Grid.Column="1"
+                    Text="8"
+                    CornerRadius="20"
+                    BackgroundColor="white"
+                    Clicked="Number_Clicked" />
+            <Button Grid.Row="3"
+                    Grid.Column="2"
+                    Text="9"
+                    CornerRadius="20"
+                    BackgroundColor="white"
+                    Clicked="Number_Clicked" />
+
+            <Button Grid.Row="4"
+                    Grid.Column="1"
+                    Text="0"
+                    CornerRadius="20"
+                    BackgroundColor="white"
+                    Clicked="Number_Clicked" />
+        </Grid>
+
+        <Label x:Name="DisplayQuantity"
+               Text="Quantity"
+               FontSize="20" 
+               FontAttributes="Bold"/>
+
+        <ListView x:Name="mylist"
+                  HasUnevenRows="True"
+                  SeparatorColor="Gray"
+                  BackgroundColor="white"
+                  ItemSelected="mylist_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout Spacing="0.5" >
+                                <Label Text="{Binding Name}"
+                                       FontSize="15"
+                                       Padding="8"
+                                       TextColor="Black"/>
+                                <Label Text="{Binding Price}"
+                                       FontSize="15"
+                                       Padding="8"
+                                       TextColor="Red" />
+                            </StackLayout>
+                            <Label Text="{Binding Quantity}"
+                                   HorizontalOptions="EndAndExpand"
+                                   FontSize="15"
+                                   Padding="8"
+                                   TextColor="Black"/>
+
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>
+    
+    
+    

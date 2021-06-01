@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="W3Project.NewProductPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Add New Product"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Button Text="Save"
+                    Clicked="SaveClicked" />
+
+            <Button Text="Cancel"
+                    Clicked="CancelClicked" />
+
+            <TableView Intent="Form">
+                <TableRoot>
+                    <TableSection Title="NEW PRODUCT">
+
+                        <EntryCell Label="Product Name"
+                                   x:Name="newProductN"
+                                   Placeholder="Enter Product Name" />
+                        <EntryCell Label="Price"
+                                   x:Name="newProductP"
+                                   Placeholder="Enter Product Price" />
+                        <EntryCell Label="Quantity"
+                                   x:Name="newProductQ"
+                                   Placeholder="Enter Product Quantity" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>    

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="W3Project.HistoryPageDetail">
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            
+            <Label Text="{Binding Name}"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Black" />
+            <StackLayout VerticalOptions="CenterAndExpand"
+                         HorizontalOptions="Center">
+                <Label Text="{Binding Name}" 
+                       TextColor="Black" />
+                <Label Text="{Binding Quantity}"
+                       TextColor="Black" />
+                <Label Text="{Binding Now}"
+                       TextColor="Black"/>
+                <Label Text="{Binding TotalPrice, StringFormat='Total amount: {0:F2}'}"
+                       TextColor="Black" />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>    
